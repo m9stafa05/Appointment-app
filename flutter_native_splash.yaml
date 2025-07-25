@@ -1,6 +1,8 @@
 flutter_native_splash:
-# IOS & Android Blew 12
+  # iOS & Android Below 12
   color: "#ffffff"
   image: assets/images/slash_screen.png
 
   android_12:
+    color: "#ffffff"
+    image: assets/images/slash_screen.png
