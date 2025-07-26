@@ -3,8 +3,8 @@ import 'package:appointment_app/core/themes/colors.dart';
 import 'package:appointment_app/core/themes/text_styles.dart';
 import 'package:appointment_app/core/widgets/app_text_form_field.dart';
 import 'package:appointment_app/core/widgets/custom_text_button.dart';
-import 'package:appointment_app/features/login/ui/widgets/already_have_account_text.dart';
-import 'package:appointment_app/features/login/ui/widgets/terms_and_conditions.dart';
+import 'package:appointment_app/features/login/logic/ui/widgets/already_have_account_text.dart';
+import 'package:appointment_app/features/login/logic/ui/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
