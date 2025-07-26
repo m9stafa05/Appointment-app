@@ -1,5 +1,5 @@
 import 'package:appointment_app/core/routing/routes.dart';
-import 'package:appointment_app/features/login/logic/ui/login_screen.dart';
+import 'package:appointment_app/features/login/ui/login_screen.dart';
 import 'package:appointment_app/features/onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 
