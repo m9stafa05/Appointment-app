@@ -16,10 +16,13 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  void emitLoginState(LoginRequestBody loginRequestBody) async {
+  void emitLoginState() async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(
-      loginRequestBody: loginRequestBody,
+      loginRequestBody: LoginRequestBody(
+        email: emailController.text,
+        password: passwordController.text,
+      ),
     );
     response.when(
       success: (LoginResponseBody loginResponseBody) {

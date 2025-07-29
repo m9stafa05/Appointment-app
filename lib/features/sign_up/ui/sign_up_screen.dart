@@ -1,19 +1,19 @@
-import 'package:appointment_app/features/login/ui/widgets/dont_have_account.dart';
-import 'package:flutter/services.dart';
-
+import 'package:appointment_app/core/helpers/extensions.dart';
+import '../../../core/routing/routes.dart';
+import '../logic/cubit/sign_up_cubit.dart';
+import 'widgets/sign_up_bloc_listener.dart';
+import 'widgets/already_have_account.dart';
 import '../../../core/helpers/spacing.dart';
-import 'package:appointment_app/core/themes/text_styles.dart';
+import '../../../core/themes/text_styles.dart';
 import '../../../core/widgets/custom_text_button.dart';
-import '../logic/cubit/login_cubit.dart';
-import 'login_bloc_listener.dart';
-import 'widgets/email_and_password.dart';
-import 'widgets/terms_and_conditions.dart';
+import '../../login/ui/widgets/terms_and_conditions.dart';
+import 'widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,8 @@ class LoginScreen extends StatelessWidget {
       canPop: false,
       onPopInvokedWithResult: (bool didPop, dynamic result) {
         if (!didPop) {
-          SystemNavigator.pop(); // Exit the app gracefully
+          context.pushReplacementNamed(Routes.loginScreen);
+          // SystemNavigator.pop(); // Exit the app gracefully
         }
       },
       child: Scaffold(
@@ -36,20 +37,20 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Welcome Back",
+                    "Create Account",
                     style: TextStyles.font24BlueBold,
                   ),
                   verticalSpacing(8),
                   Text(
-                    "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
+                    "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!",
                     style: TextStyles.font14GrayRegular.copyWith(
                       height: 2,
                     ),
                   ),
-                  verticalSpacing(36),
+                  verticalSpacing(30),
                   Column(
                     children: [
-                      const EmailAndPassword(),
+                      const SignUpForm(),
                       Align(
                         alignment: AlignmentDirectional.centerEnd,
                         child: Text(
@@ -59,17 +60,18 @@ class LoginScreen extends StatelessWidget {
                       ),
                       verticalSpacing(36),
                       CustomTextButton(
-                        buttonText: 'Login',
+                        buttonText: 'Create Account',
                         textStyle: TextStyles.font16WhiteSemiBold,
                         onPressed: () {
-                          validateAndLogin(context);
+                          validateAndSignUp(context);
                         },
                       ),
                       verticalSpacing(20),
                       const TermsAndConditions(),
                       verticalSpacing(30),
-                      const DontHaveAccount(),
-                      const LoginBlocListener(),
+                      const AlreadyHaveAccountText(),
+                      const SignUpBlocListener(),
+                      verticalSpacing(20),
                     ],
                   ),
                 ],
@@ -81,10 +83,10 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void validateAndLogin(BuildContext context) {
-    final cubit = context.read<LoginCubit>();
+  void validateAndSignUp(BuildContext context) {
+    final cubit = context.read<SignUpCubit>();
     if (cubit.formKey.currentState!.validate()) {
-      cubit.emitLoginState();
+      cubit.emitSignUp();
     }
   }
 }
