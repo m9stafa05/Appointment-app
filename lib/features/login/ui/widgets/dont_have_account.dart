@@ -1,9 +1,12 @@
-
+import 'package:appointment_app/core/helpers/extensions.dart';
 import 'package:appointment_app/core/themes/text_styles.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class AlreadyHaveAccountText extends StatelessWidget {
-  const AlreadyHaveAccountText({super.key});
+import '../../../../core/routing/routes.dart';
+
+class DontHaveAccount extends StatelessWidget {
+  const DontHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,10 @@ class AlreadyHaveAccountText extends StatelessWidget {
           TextSpan(
             text: "Sign Up",
             style: TextStyles.font13BlueSemiBold,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                context.pushReplacementNamed(Routes.signUpScreen);
+              },
           ),
         ],
       ),
