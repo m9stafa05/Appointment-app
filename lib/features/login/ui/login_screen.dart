@@ -1,7 +1,6 @@
 import 'package:appointment_app/core/helpers/spacing.dart';
 import 'package:appointment_app/core/themes/text_styles.dart';
 import 'package:appointment_app/core/widgets/custom_text_button.dart';
-import 'package:appointment_app/features/login/data/models/login_request_body.dart';
 import 'package:appointment_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/login_bloc_listener.dart';
 import 'package:appointment_app/features/login/ui/widgets/already_have_account_text.dart';
@@ -75,12 +74,7 @@ class LoginScreen extends StatelessWidget {
   void validateAndLogin(BuildContext context) {
     final cubit = context.read<LoginCubit>();
     if (cubit.formKey.currentState!.validate()) {
-      cubit.emitLoginState(
-        LoginRequestBody(
-          email: cubit.emailController.text,
-          password: cubit.passwordController.text,
-        ),
-      );
+      cubit.emitLoginState();
     }
   }
 }
