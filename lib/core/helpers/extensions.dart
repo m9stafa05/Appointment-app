@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 extension Navigation on BuildContext {
   /// Push a new route by widget
   void push(Widget page) {

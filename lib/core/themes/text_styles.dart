@@ -29,7 +29,7 @@ class TextStyles {
     color: ColorsManger.mainBlue,
   );
 
-  //  ####### Dark Blue - #[12 - 14 ] #######
+  //  ####### Dark Blue - #[12 - 14 - 15] #######
   static TextStyle font12DarkBlueRegular = TextStyle(
     fontSize: 12.sp,
     color: ColorsManger.darkBlue,
@@ -46,7 +46,18 @@ class TextStyles {
     color: ColorsManger.darkBlue,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font14DarkBlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsManger.darkBlue,
+    fontWeight: FontWeightHelper.semiBold,
+  );
 
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15.sp,
+    color: ColorsManger.darkBlue,
+    fontWeight: FontWeightHelper.medium,
+  );
+  
   //  ####### gray / LightGray - #[12 - 14 - 32] #######
   static TextStyle font12GrayRegular = TextStyle(
     fontSize: 12.sp,
