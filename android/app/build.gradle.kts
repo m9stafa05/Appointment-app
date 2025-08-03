@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.example.appointment_app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -29,6 +29,22 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+flavorDimensions += "default"
+
+productFlavors {
+    create("development") {
+        dimension = "default"
+        resValue("string", "app_name", "DocDoc development")
+        applicationIdSuffix = ".development"
+    }
+
+    create("production") {
+        dimension = "default"
+        resValue("string", "app_name", "DocDoc production")
+        applicationIdSuffix = ".production"
+    }
+}
+
 
     buildTypes {
         release {
