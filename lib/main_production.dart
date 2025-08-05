@@ -9,4 +9,6 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   runApp(DocApp(appRouter: AppRouter()));
 }
+// fastlane firebase_distribution
 // flutter run --release --flavor production --target lib/main_production.dart
+// flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons
