@@ -4,4 +4,6 @@ class AssetsManger {
       'assets/svgs/logo_low_opacity.svg';
   static const String doctorImage =
       'assets/images/onboarding_doctor.png';
+  static const String notificationIcon =
+      'assets/svgs/notfication_icon.svg';
 }
