@@ -57,8 +57,13 @@ class TextStyles {
     color: ColorsManger.darkBlue,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font18DarkBlueSemiBold = TextStyle(
+    fontSize: 18.sp,
+    color: ColorsManger.darkBlue,
+    fontWeight: FontWeightHelper.semiBold,
+  );
   
-    static TextStyle font18DarkBlueBold = TextStyle(
+  static TextStyle font18DarkBlueBold = TextStyle(
     fontSize: 18.sp,
     color: ColorsManger.darkBlue,
     fontWeight: FontWeightHelper.bold,
