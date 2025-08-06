@@ -1,3 +1,4 @@
+import 'package:appointment_app/features/home/ui/widgets/home_tap_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,10 +7,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        
-        title: const Text('Home Screen')),
-      body: const Column(children: [Text('Home Screen')]),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.fromLTRB(20, 16, 20, 20),
+          child: const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [HomeTopBar()],
+          ),
+        ),
+      ),
     );
   }
 }
