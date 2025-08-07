@@ -1,3 +1,5 @@
+import 'package:appointment_app/features/home/logic/cubit/home_cubit.dart';
+
 import '../di/dependency_injection.dart';
 import 'routes.dart';
 import '../../features/home/ui/home_screen.dart';
@@ -10,14 +12,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/sign_up/ui/sign_up_screen.dart';
 
 class AppRouter {
-  Route<dynamic> generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     // To Be Passed with the screens
+    // ignore: unused_local_variable
     final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBoardingScreen:
-        return MaterialPageRoute(
-          builder: (_) => const OnBoardingScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -33,13 +34,14 @@ class AppRouter {
           ),
         );
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
-      default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
-            body: Center(child: Text('Page not found')),
+          builder: (_) => BlocProvider(
+            create: (context) => HomeCubit(getIt())..emitGetSpecializations(),
+            child: const HomeScreen(),
           ),
         );
+      default:
+        return null;
     }
   }
 }
