@@ -1,20 +1,19 @@
 class AssetsManger {
   // ################## pngs ##################
-  static const String doctorImage =
-      'assets/images/onboarding_doctor.png';
+  static const String doctorImage = 'assets/images/onboarding_doctor.png';
   static const String doctorsBlueContainer =
       'assets/images/home_background.png';
-  static const String femaleDoctor =
-      'assets/images/female_doctor.png';
+  static const String femaleDoctor = 'assets/images/female_doctor.png';
   //  ################## Svgs ##################
   static const String docLog = 'assets/svgs/logo.svg';
-  static const String docLogLowOpacity =
-      'assets/svgs/logo_low_opacity.svg';
-  static const String notificationIcon =
-      'assets/svgs/notfication_icon.svg';
-  static const String doctorSpecialty =
-      'assets/svgs/general_speciality.svg';
+  static const String docLogLowOpacity = 'assets/svgs/logo_low_opacity.svg';
+  static const String notificationIcon = 'assets/svgs/notfication_icon.svg';
+  static const String doctorSpecialty = 'assets/svgs/general_speciality.svg';
 
+  static const String maleDoctorDefaultImage =
+      'assets/images/default_male_doctor.jfif';
+  static const String femaleDoctorDefaultImage =
+      'assets/images/default_female_doctor.jfif';
 
   // Doctor Speciality
   static const List doctorSpecialties = [

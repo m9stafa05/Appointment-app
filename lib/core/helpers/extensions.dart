@@ -8,10 +8,7 @@ extension Navigation on BuildContext {
 
   /// Replace current screen with a new one
   void pushReplacement(Widget page) {
-    Navigator.pushReplacement(
-      this,
-      MaterialPageRoute(builder: (_) => page),
-    );
+    Navigator.pushReplacement(this, MaterialPageRoute(builder: (_) => page));
   }
 
   /// Push and remove all previous routes
@@ -35,18 +32,11 @@ extension Navigation on BuildContext {
 
   /// Push replacement with a named route
   void pushReplacementNamed(String routeName, {Object? arguments}) {
-    Navigator.pushReplacementNamed(
-      this,
-      routeName,
-      arguments: arguments,
-    );
+    Navigator.pushReplacementNamed(this, routeName, arguments: arguments);
   }
 
   /// Push named and remove all
-  void pushNamedAndRemoveUntil(
-    String routeName, {
-    Object? arguments,
-  }) {
+  void pushNamedAndRemoveUntil(String routeName, {Object? arguments}) {
     Navigator.pushNamedAndRemoveUntil(
       this,
       routeName,

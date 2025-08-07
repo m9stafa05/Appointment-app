@@ -14,9 +14,7 @@ class SignUpBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listenWhen: (previous, current) =>
-          current is Loading ||
-          current is Success ||
-          current is Failed,
+          current is Loading || current is Success || current is Failed,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
@@ -64,8 +62,9 @@ class SignUpBlocListener extends StatelessWidget {
                       },
                       child: Text(
                         'Continue to Login',
-                        style: TextStyles.font14DarkBlueSemiBold
-                            .copyWith(color: Colors.green),
+                        style: TextStyles.font14DarkBlueSemiBold.copyWith(
+                          color: Colors.green,
+                        ),
                       ),
                     ),
                   ],
@@ -81,11 +80,7 @@ class SignUpBlocListener extends StatelessWidget {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  icon: const Icon(
-                    Icons.error,
-                    color: Colors.red,
-                    size: 32,
-                  ),
+                  icon: const Icon(Icons.error, color: Colors.red, size: 32),
                   content: Text(
                     errorMessage,
                     style: TextStyles.font15DarkBlueMedium,

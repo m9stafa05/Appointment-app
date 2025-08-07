@@ -26,9 +26,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   void initState() {
     super.initState();
-    passwordController = context
-        .read<SignUpCubit>()
-        .passwordController;
+    passwordController = context.read<SignUpCubit>().passwordController;
     setupPasswordControllerListener();
   }
 
@@ -93,9 +91,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           verticalSpacing(18),
           AppTextFormField(
-            controller: context
-                .read<SignUpCubit>()
-                .passwordController,
+            controller: context.read<SignUpCubit>().passwordController,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Password is required';
@@ -121,9 +117,7 @@ class _SignUpFormState extends State<SignUpForm> {
             isObscureText: isObscureText,
             suffixIcon: IconButton(
               icon: Icon(
-                isObscureText
-                    ? Icons.visibility_off
-                    : Icons.visibility,
+                isObscureText ? Icons.visibility_off : Icons.visibility,
                 color: isObscureText
                     ? ColorsManger.lightGray
                     : ColorsManger.mainBlue,
@@ -159,10 +153,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (!AppRegex.hasMinLength(value)) {
                 return 'Password must be at least 8 characters';
               }
-              if (context
-                      .read<SignUpCubit>()
-                      .passwordController
-                      .text !=
+              if (context.read<SignUpCubit>().passwordController.text !=
                   context
                       .read<SignUpCubit>()
                       .passwordConfirmationController
@@ -175,9 +166,7 @@ class _SignUpFormState extends State<SignUpForm> {
             isObscureText: isObscureText,
             suffixIcon: IconButton(
               icon: Icon(
-                isObscureText
-                    ? Icons.visibility_off
-                    : Icons.visibility,
+                isObscureText ? Icons.visibility_off : Icons.visibility,
                 color: isObscureText
                     ? ColorsManger.lightGray
                     : ColorsManger.mainBlue,

@@ -5,6 +5,5 @@ class SignUpState<T> with _$SignUpState<T> {
   const factory SignUpState.initial() = _Initial;
   const factory SignUpState.loading() = Loading;
   const factory SignUpState.success(T data) = Success;
-  const factory SignUpState.failed({required String errorMessage}) =
-      Failed;
+  const factory SignUpState.failed({required String errorMessage}) = Failed;
 }

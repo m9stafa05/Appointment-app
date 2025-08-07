@@ -9,12 +9,7 @@ class SignUpResponseBody {
   bool? status;
   int? code;
 
-  SignUpResponseBody({
-    this.message,
-    this.data,
-    this.status,
-    this.code,
-  });
+  SignUpResponseBody({this.message, this.data, this.status, this.code});
 
   factory SignUpResponseBody.fromJson(Map<String, dynamic> json) =>
       _$SignUpResponseBodyFromJson(json);

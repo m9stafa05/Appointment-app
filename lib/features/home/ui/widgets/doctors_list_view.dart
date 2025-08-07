@@ -1,13 +1,13 @@
-import 'package:appointment_app/features/home/ui/widgets/doctor_card.dart';
+import 'doctor_list_view_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/themes/text_styles.dart';
+import '../../data/models/specializations_response_model.dart';
 
 class DoctorsListView extends StatelessWidget {
-  const DoctorsListView({super.key});
-
+  const DoctorsListView({super.key, this.doctorsList});
+  final List<Doctors?>? doctorsList;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,13 +25,12 @@ class DoctorsListView extends StatelessWidget {
         ),
         verticalSpacing(16.h),
 
-        // Safe scrollable list with fixed height
         SizedBox(
           height: 270.h,
           child: ListView.builder(
-            itemCount: 10,
+            itemCount: doctorsList?.length,
             itemBuilder: (context, index) {
-              return const DoctorCard();
+              return DoctorListViewCard(doctorModel: doctorsList?[index]);
             },
           ),
         ),

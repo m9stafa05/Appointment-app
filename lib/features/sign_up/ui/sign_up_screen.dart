@@ -28,24 +28,16 @@ class SignUpScreen extends StatelessWidget {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 50.h,
-              horizontal: 30.w,
-            ),
+            padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 30.w),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Create Account",
-                    style: TextStyles.font24BlueBold,
-                  ),
+                  Text("Create Account", style: TextStyles.font24BlueBold),
                   verticalSpacing(8),
                   Text(
                     "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!",
-                    style: TextStyles.font14GrayRegular.copyWith(
-                      height: 2,
-                    ),
+                    style: TextStyles.font14GrayRegular.copyWith(height: 2),
                   ),
                   verticalSpacing(30),
                   Column(
