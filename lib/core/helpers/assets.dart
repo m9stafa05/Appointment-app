@@ -10,6 +10,11 @@ class AssetsManger {
   static const String notificationIcon = 'assets/svgs/notfication_icon.svg';
   static const String doctorSpecialty = 'assets/svgs/general_speciality.svg';
 
+  static const String maleDoctorDefaultImage =
+      'assets/images/default_male_doctor.jfif';
+  static const String femaleDoctorDefaultImage =
+      'assets/images/default_female_doctor.jfif';
+
   // Doctor Speciality
   static const List doctorSpecialties = [
     'assets/svgs/general_speciality.svg',
