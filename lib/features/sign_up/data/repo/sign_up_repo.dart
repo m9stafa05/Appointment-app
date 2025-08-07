@@ -5,9 +5,8 @@ import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_results.dart';
 import '../../../../core/networking/api_service.dart';
 
-
 class SignUpRepo {
-    final ApiService _apiService;
+  final ApiService _apiService;
 
   SignUpRepo(this._apiService);
   Future<ApiResults<SignUpResponseBody>> signUp({

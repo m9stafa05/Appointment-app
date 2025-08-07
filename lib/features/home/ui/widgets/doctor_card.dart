@@ -43,7 +43,7 @@ class DoctorCard extends StatelessWidget {
                 Text(
                   'General | RSUD Gatot Subroto',
                   style: TextStyles.font12GrayRegular,
-                   overflow: TextOverflow.ellipsis,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 verticalSpacing(10),
                 const DoctorCardRating(),

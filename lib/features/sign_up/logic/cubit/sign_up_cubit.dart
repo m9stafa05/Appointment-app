@@ -13,14 +13,10 @@ class SignUpCubit extends Cubit<SignUpState> {
   final SignUpRepo signUpRepo;
   SignUpCubit(this.signUpRepo) : super(const SignUpState.initial());
   final formKey = GlobalKey<FormState>();
-  final TextEditingController nameController =
-      TextEditingController();
-  final TextEditingController emailController =
-      TextEditingController();
-  final TextEditingController phoneController =
-      TextEditingController();
-  final TextEditingController passwordController =
-      TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final TextEditingController passwordConfirmationController =
       TextEditingController();
 
@@ -42,9 +38,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       },
       failure: (error) {
         emit(
-          SignUpState.failed(
-            errorMessage: error.apiErrorModel.message ?? "",
-          ),
+          SignUpState.failed(errorMessage: error.apiErrorModel.message ?? ""),
         );
       },
     );

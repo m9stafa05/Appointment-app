@@ -44,15 +44,10 @@ class CustomTextButton extends StatelessWidget {
           ),
         ),
         fixedSize: WidgetStateProperty.all(
-          Size(
-            buttonWidth ?? double.maxFinite,
-            buttonHeight?.h ?? 50.h,
-          ),
+          Size(buttonWidth ?? double.maxFinite, buttonHeight?.h ?? 50.h),
         ),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: WidgetStateProperty.all(
-          const Size(double.infinity, 52),
-        ),
+        minimumSize: WidgetStateProperty.all(const Size(double.infinity, 52)),
       ),
       onPressed: onPressed,
       child: Text(
