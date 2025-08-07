@@ -2,7 +2,6 @@ import 'package:appointment_app/core/helpers/spacing.dart';
 import 'package:appointment_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/helpers/assets.dart';
 
 class DoctorsBlueContainer extends StatelessWidget {
@@ -18,10 +17,7 @@ class DoctorsBlueContainer extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 165.h,
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.w,
-              vertical: 16.h,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             decoration: BoxDecoration(
               image: const DecorationImage(
                 image: AssetImage(AssetsManger.doctorsBlueContainer),
@@ -34,9 +30,7 @@ class DoctorsBlueContainer extends StatelessWidget {
               children: [
                 Text(
                   'Book and\nschedule with\nnearest doctor',
-                  style: TextStyles.font18WhiteMedium.copyWith(
-                    height: 1.5,
-                  ),
+                  style: TextStyles.font18WhiteMedium.copyWith(height: 1.5),
                 ),
                 verticalSpacing(16),
                 Expanded(
@@ -64,10 +58,7 @@ class DoctorsBlueContainer extends StatelessWidget {
           Positioned(
             right: 10.w,
             bottom: 0,
-            child: Image.asset(
-              AssetsManger.femaleDoctor,
-              height: 195.h,
-            ),
+            child: Image.asset(AssetsManger.femaleDoctor, height: 195.h),
           ),
         ],
       ),
