@@ -48,7 +48,7 @@ class DioFactory {
       InterceptorsWrapper(
         onRequest: (options, handler) async {
           // Get fresh token for each request
-          final token = await SharedPref.getString(SharedPrefKey.userToken);
+          final token = await SharedPref.getSecuredString(SharedPrefKey.userToken);
           if (token != null && token.toString().isNotEmpty) {
             options.headers['Authorization'] = 'Bearer $token';
           }
