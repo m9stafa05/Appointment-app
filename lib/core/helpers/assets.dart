@@ -11,7 +11,7 @@ class AssetsManger {
   static const String doctorSpecialty = 'assets/svgs/general_speciality.svg';
 
   static const String maleDoctorDefaultImage =
-      'assets/images/default_male_doctor.jfif';
+      'assets/images/defult_male_doctor.jfif';
   static const String femaleDoctorDefaultImage =
       'assets/images/default_female_doctor.jfif';
 

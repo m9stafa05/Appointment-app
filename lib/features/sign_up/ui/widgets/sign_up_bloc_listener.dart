@@ -72,7 +72,6 @@ class SignUpBlocListener extends StatelessWidget {
               },
             );
 
-            context.pushReplacementNamed(Routes.homeScreen);
           },
           failed: (errorMessage) {
             context.pop();

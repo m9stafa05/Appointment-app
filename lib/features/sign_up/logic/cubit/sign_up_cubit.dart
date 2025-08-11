@@ -6,6 +6,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/shered_pref.dart';
+import '../../../../core/networking/dio_factory.dart';
+
 part 'sign_up_state.dart';
 part 'sign_up_cubit.freezed.dart';
 
@@ -33,7 +37,8 @@ class SignUpCubit extends Cubit<SignUpState> {
       ),
     );
     response.when(
-      success: (SignUpResponseBody signUpResponseBody) {
+      success: (SignUpResponseBody signUpResponseBody) async {
+        await saveUserToken(signUpResponseBody.data?.token ?? '');
         emit(SignUpState.success(signUpResponseBody));
       },
       failure: (error) {
@@ -42,5 +47,10 @@ class SignUpCubit extends Cubit<SignUpState> {
         );
       },
     );
+  }
+
+  Future<void> saveUserToken(String token) async {
+    await SharedPref.setSecuredString(SharedPrefKey.userToken, token);
+    DioFactory.setTokenAfterLogin(token);
   }
 }

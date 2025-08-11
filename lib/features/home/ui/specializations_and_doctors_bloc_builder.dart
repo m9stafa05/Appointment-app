@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing.dart';
-import '../../../core/routing/routes.dart';
 import '../../../core/themes/colors.dart';
 
 class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
@@ -74,7 +73,7 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
           verticalSpacing(32.h),
           IconButton(
             onPressed: () {
-              context.pushReplacementNamed(Routes.homeScreen);
+             BlocProvider.of<HomeCubit>(context).emitGetSpecializations();
             },
             icon: const Icon(Icons.refresh, color: ColorsManger.mainBlue),
           ),
