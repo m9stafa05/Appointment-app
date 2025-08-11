@@ -1,3 +1,5 @@
+import 'package:appointment_app/core/helpers/constants.dart';
+import 'package:appointment_app/core/helpers/shered_pref.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -24,20 +26,40 @@ class DioFactory {
   }
 
   static void addDioHeader() {
+
     dio?.options.headers = {
       "Accept": "application/json",
-      "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzU0NTI1NjQ3LCJleHAiOjE3NTQ2MTIwNDcsIm5iZiI6MTc1NDUyNTY0NywianRpIjoiV3k5Q0ZQWjk5Tm1Yc3hMTiIsInN1YiI6IjQ2NzUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CC0iDWL_Qr4LMigp-zbmth_2hFexLPNk72NDnLGJ040",
+      "Content-Type": "application/json",
     };
-    
+  }
+
+  static void setTokenAfterLogin(String token) {
+    // Update headers while preserving existing ones
+    dio?.options.headers.addAll({"Authorization": "Bearer $token"});
+  }
+
+  static void clearToken() {
+    dio?.options.headers.remove("Authorization");
   }
 
   static void addDioInterceptor() {
-    dio?.interceptors.add(
+  dio?.interceptors.addAll([
+      // Add token interceptor
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          // Get fresh token for each request
+          final token = await SharedPref.getString(SharedPrefKey.userToken);
+          if (token != null && token.toString().isNotEmpty) {
+            options.headers['Authorization'] = 'Bearer $token';
+          }
+          handler.next(options);
+        },
+      ),
       PrettyDioLogger(
         requestBody: true,
         requestHeader: true,
         responseHeader: true,
       ),
-    );
+    ]);
   }
 }
