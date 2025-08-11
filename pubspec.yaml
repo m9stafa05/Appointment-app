@@ -59,6 +59,8 @@ dependencies:
   # For screens And Font Size
   flutter_screenutil: ^5.9.3
   firebase_core: ^4.0.0
+  # Local Storage
+  shared_preferences: ^2.5.3
 
 
 dev_dependencies:
