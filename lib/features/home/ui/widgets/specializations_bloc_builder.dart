@@ -1,16 +1,18 @@
-import '../data/models/specializations_response_model.dart';
-import '../logic/cubit/home_cubit.dart';
-import '../logic/cubit/home_state.dart';
-import 'widgets/doctor_specialty_section.dart';
-import 'widgets/doctors_list_view.dart';
+import 'package:appointment_app/features/home/ui/widgets/Specialty_shimmer_loading.dart';
+import 'package:appointment_app/features/home/ui/widgets/doctors_shimmer_loading.dart';
+
+import '../../data/models/specializations_response_model.dart';
+import '../../logic/cubit/home_cubit.dart';
+import '../../logic/cubit/home_state.dart';
+import 'specialty_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../core/helpers/spacing.dart';
-import '../../../core/themes/colors.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/themes/colors.dart';
 
-class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
-  const SpecializationsAndDoctorsBlocBuilder({super.key});
+class SpecializationsBlocBuilder extends StatelessWidget {
+  const SpecializationsBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +24,10 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           specializationsLoading: () {
-            return Center(child: loading());
+            return loading();
           },
-          specializationsLoaded: (specializationsResponseModel) {
-            var specializationList =
-                specializationsResponseModel.specializationDataList;
+          specializationsLoaded: (specializationDataList) {
+            var specializationList = specializationDataList;
 
             final safeSpecializationList = (specializationList ?? [])
                 .whereType<SpecializationsData>()
@@ -43,26 +44,19 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
   }
 
   Widget loading() {
-    return const Center(
-      child: Center(
-        child: CircularProgressIndicator(color: ColorsManger.mainBlue),
+    return Expanded(
+      child: Column(
+        children: [
+          const SpecialtyShimmerLoading(),
+          verticalSpacing(10),
+          const DoctorsShimmerLoading(),
+        ],
       ),
     );
   }
 
   Widget success(safeSpecializationList) {
-    return Column(
-      children: [
-        DoctorSpecialtySection(specializationList: safeSpecializationList),
-        DoctorsListView(
-          doctorsList:
-              (safeSpecializationList.isNotEmpty
-                      ? safeSpecializationList[1].doctorsList
-                      : [])
-                  ?.cast<Doctors?>(),
-        ),
-      ],
-    );
+    return SpecialtyListView(specializationList: safeSpecializationList);
   }
 
   Widget errorSetUp(error, context) {
@@ -73,7 +67,7 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
           verticalSpacing(32.h),
           IconButton(
             onPressed: () {
-             BlocProvider.of<HomeCubit>(context).emitGetSpecializations();
+              BlocProvider.of<HomeCubit>(context).emitGetSpecializations();
             },
             icon: const Icon(Icons.refresh, color: ColorsManger.mainBlue),
           ),
