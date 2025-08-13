@@ -63,6 +63,8 @@ dependencies:
   shared_preferences: ^2.5.3
   # Secure Storage
   flutter_secure_storage: ^9.2.4
+  # For Shimmer loading
+  shimmer: ^3.0.0
 
 
 dev_dependencies:

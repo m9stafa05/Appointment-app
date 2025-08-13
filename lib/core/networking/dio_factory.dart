@@ -25,11 +25,14 @@ class DioFactory {
     }
   }
 
-  static void addDioHeader() {
-
+  static void addDioHeader() async {
+    final token = await SharedPref.getSecuredString(SharedPrefKey.userToken);
     dio?.options.headers = {
       "Accept": "application/json",
       "Content-Type": "application/json",
+      if (token != null && token.isNotEmpty)
+        "Authorization":
+            'Bearer ${await SharedPref.getSecuredString(SharedPrefKey.userToken)}',
     };
   }
 
@@ -43,12 +46,14 @@ class DioFactory {
   }
 
   static void addDioInterceptor() {
-  dio?.interceptors.addAll([
+    dio?.interceptors.addAll([
       // Add token interceptor
       InterceptorsWrapper(
         onRequest: (options, handler) async {
           // Get fresh token for each request
-          final token = await SharedPref.getSecuredString(SharedPrefKey.userToken);
+          final token = await SharedPref.getSecuredString(
+            SharedPrefKey.userToken,
+          );
           if (token != null && token.toString().isNotEmpty) {
             options.headers['Authorization'] = 'Bearer $token';
           }

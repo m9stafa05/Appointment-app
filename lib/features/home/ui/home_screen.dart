@@ -1,5 +1,5 @@
-import 'package:appointment_app/features/home/ui/specializations_and_doctors_bloc_builder.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'widgets/doctors_list/doctors_bloc_builder.dart';
+import 'widgets/specialization_list/specializations_bloc_builder.dart';
 import '../../../core/helpers/spacing.dart';
 import 'widgets/doctors_blue_container.dart';
 import 'widgets/home_tap_bar.dart';
@@ -21,8 +21,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HomeTopBar(),
               const DoctorsBlueContainer(),
-              verticalSpacing(16.h),
-              const SpecializationsAndDoctorsBlocBuilder(),
+              verticalSpacing(16),
+              const SpecializationsBlocBuilder(),
+              verticalSpacing(16),
+              const DoctorsBlocBuilder(),
             ],
           ),
         ),
