@@ -1,9 +1,9 @@
 import 'doctor_list_view_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/text_styles.dart';
-import '../../data/models/specializations_response_model.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/themes/text_styles.dart';
+import '../../../data/models/specializations_response_model.dart';
 
 class DoctorsListView extends StatelessWidget {
   const DoctorsListView({super.key, this.doctorsList});

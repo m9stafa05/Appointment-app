@@ -1,11 +1,10 @@
-// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/colors.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/themes/colors.dart';
 
 class SpecialtyShimmerLoading extends StatelessWidget {
   const SpecialtyShimmerLoading({super.key});

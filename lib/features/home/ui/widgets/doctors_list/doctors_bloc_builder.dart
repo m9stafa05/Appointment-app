@@ -1,12 +1,10 @@
-import 'package:appointment_app/features/home/ui/widgets/doctors_list_view.dart';
-
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/colors.dart';
-import '../../logic/cubit/home_cubit.dart';
+import 'doctors_list_view.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/themes/colors.dart';
+import '../../../logic/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../logic/cubit/home_state.dart';
+import '../../../logic/cubit/home_state.dart';
 
 class DoctorsBlocBuilder extends StatelessWidget {
   const DoctorsBlocBuilder({super.key});

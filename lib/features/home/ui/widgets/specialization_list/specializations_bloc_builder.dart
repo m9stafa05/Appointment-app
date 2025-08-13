@@ -1,15 +1,14 @@
-import 'package:appointment_app/features/home/ui/widgets/Specialty_shimmer_loading.dart';
-import 'package:appointment_app/features/home/ui/widgets/doctors_shimmer_loading.dart';
-
-import '../../data/models/specializations_response_model.dart';
-import '../../logic/cubit/home_cubit.dart';
-import '../../logic/cubit/home_state.dart';
+import 'specialty_shimmer_loading.dart';
+import '../doctors_list/doctors_shimmer_loading.dart';
+import '../../../data/models/specializations_response_model.dart';
+import '../../../logic/cubit/home_cubit.dart';
+import '../../../logic/cubit/home_state.dart';
 import 'specialty_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/colors.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/themes/colors.dart';
 
 class SpecializationsBlocBuilder extends StatelessWidget {
   const SpecializationsBlocBuilder({super.key});

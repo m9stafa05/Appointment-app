@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/colors.dart';
+import '../../../../../../../core/helpers/spacing.dart';
+import '../../../../../core/themes/colors.dart';
 
 class DoctorsShimmerLoading extends StatelessWidget {
   const DoctorsShimmerLoading({super.key});

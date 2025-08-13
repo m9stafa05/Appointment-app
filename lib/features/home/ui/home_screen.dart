@@ -1,5 +1,5 @@
-import 'widgets/doctors_bloc_builder.dart';
-import 'widgets/specializations_bloc_builder.dart';
+import 'widgets/doctors_list/doctors_bloc_builder.dart';
+import 'widgets/specialization_list/specializations_bloc_builder.dart';
 import '../../../core/helpers/spacing.dart';
 import 'widgets/doctors_blue_container.dart';
 import 'widgets/home_tap_bar.dart';

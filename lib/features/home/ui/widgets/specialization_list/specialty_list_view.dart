@@ -1,11 +1,11 @@
-import 'package:appointment_app/core/helpers/spacing.dart';
-import 'package:appointment_app/features/home/logic/cubit/home_cubit.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../logic/cubit/home_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'specializations_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/themes/text_styles.dart';
-import '../../data/models/specializations_response_model.dart';
+import '../../../../../core/themes/text_styles.dart';
+import '../../../data/models/specializations_response_model.dart';
 
 class SpecialtyListView extends StatefulWidget {
   const SpecialtyListView({super.key, required this.specializationList});

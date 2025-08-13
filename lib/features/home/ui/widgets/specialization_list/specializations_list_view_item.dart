@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/helpers/assets.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/colors.dart';
-import '../../../../core/themes/text_styles.dart';
-import '../../data/models/specializations_response_model.dart';
+import '../../../../../core/helpers/assets.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/themes/colors.dart';
+import '../../../../../core/themes/text_styles.dart';
+import '../../../data/models/specializations_response_model.dart';
 
 class SpecializationsListViewItem extends StatelessWidget {
   const SpecializationsListViewItem({
